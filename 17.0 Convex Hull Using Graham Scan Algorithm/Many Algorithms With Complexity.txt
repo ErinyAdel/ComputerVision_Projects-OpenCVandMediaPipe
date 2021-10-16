@@ -1,0 +1,4 @@
+1. Gift wrapping, a.k.a. Jarvis march — O(nh)
+2. Graham scan — O(nlogn)
+3. Chan’s algorithm — O(nlogh)
+4. Sklansky (1982) — O(nlogn) ( OpenCV uses this algorithm)
