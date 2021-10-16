@@ -13,7 +13,7 @@ frameSize = (500,700)
 objectDetector = cv2.createBackgroundSubtractorMOG2(history=100, varThreshold=40) 
 
 
-cap = cv2.VideoCapture("hightway2.mp4")
+cap = cv2.VideoCapture("hightway.mp4")
 
 ## Get the coordinates of all white elements and then remove all small elements that we don't need 
 

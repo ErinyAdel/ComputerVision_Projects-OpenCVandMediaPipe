@@ -42,6 +42,7 @@ for i in range(3):
     plt.subplot(3,3,i*3+3),plt.imshow(images[i*3+2],'gray')
     plt.title(titles[i*3+2]), plt.xticks([]), plt.yticks([])
 
+plt.tight_layout()
 plt.savefig('Saved plt.png')
 plt.show()
 
@@ -49,6 +50,9 @@ cv.imshow("Result", cv.imread('Saved plt.png'))
 
 cv.waitKey(0)
 cv.destroyAllWindows()
+
+
+
 
 """
 Trace For (for-loop)
