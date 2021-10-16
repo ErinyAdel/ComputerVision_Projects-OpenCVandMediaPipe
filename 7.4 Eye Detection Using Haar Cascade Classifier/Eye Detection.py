@@ -27,10 +27,10 @@ while cap.isOpened():
     _, frame = cap.read()
     
     gray  = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
-    eyes  = eyeCascade.detectMultiScale(gray, 1.1, 4)
+    eyes  = eyeCascade.detectMultiScale(gray, 1.1, 6)
     
     for(x, y, w, h) in eyes:
-        cv.rectangle(frame, (x,y), (x+w,y+h), (255,0,0), 3)
+        cv.rectangle(frame, (x,y), (x+w,y+h), (255,0,0), 1)
     
     cv.imshow("Image",frame)
     if cv.waitKey(1) == ord('q'):
