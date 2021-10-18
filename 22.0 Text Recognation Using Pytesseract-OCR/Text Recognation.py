@@ -28,11 +28,12 @@ img = cv2.imread('test1.jpg')
 #img = cv2.resize(img, None, fx=0.5, fy=0.3)
 
 ## Pre-processing
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+averaging = cv2.blur(img, (2,2))
+gray = cv2.cvtColor(averaging, cv2.COLOR_BGR2GRAY)
 adaptive_thr = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 85, 20) ## Lighting
 
-config = '--psm 6' ## Single uniform block of text. 
-text = pytesseract.image_to_string(img, config=config)
+config = '--psm 3' ## test1.jpg==> --psm 3 + psm 6, test3==> --psm 6
+text = pytesseract.image_to_string(img, config=config, lang="eng")
 
 cv2.imshow("Gray", gray)
 cv2.imshow("Adaptive Threshold", adaptive_thr)
