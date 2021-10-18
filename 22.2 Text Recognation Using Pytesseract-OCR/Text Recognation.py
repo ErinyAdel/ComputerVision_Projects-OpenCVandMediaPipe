@@ -15,10 +15,10 @@ img_h, img_w, _ = img.shape
 boxes = pytesseract.image_to_data(img)
 print(boxes)
 for x,b in enumerate(boxes.splitlines()):
-    if x != 0:
-        b = b.split()
+    if x != 0: ## Skip 'Level' Column (Index 0)
+        b = b.split() ## Split Each Value For The Separated Line, By Comma (In List)
         print(b)
-        if len(b) == 12:
+        if len(b) == 12: ## Take The Values Which Include Values For 'Text' Column
             x,y,w,h = int(b[6]), int(b[7]), int(b[8]), int(b[9])
             cv2.rectangle(img, (x,y), (x+w,y+h), (100,144,0), 2)
             cv2.putText(img, b[11], (x,y), cv2.FONT_HERSHEY_COMPLEX, 0.5, (100,100,0), 1)
