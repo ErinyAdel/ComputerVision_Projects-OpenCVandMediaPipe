@@ -4,6 +4,19 @@ Created on Mon Oct 18 11:38:21 2021
 @author: Eriny
 """
 
+"""
+Fonts:
+    
+FONT_HERSHEY_SIMPLEX = 0
+FONT_HERSHEY_PLAIN = 1
+FONT_HERSHEY_DUPLEX = 2
+FONT_HERSHEY_COMPLEX = 3
+FONT_HERSHEY_TRIPLEX = 4
+FONT_HERSHEY_COMPLEX_SMALL = 5
+FONT_HERSHEY_SCRIPT_SIMPLEX = 6
+FONT_HERSHEY_SCRIPT_COMPLEX = 7
+"""
+
 import cv2
 import pytesseract
 
@@ -21,7 +34,7 @@ for x,b in enumerate(boxes.splitlines()):
         if len(b) == 12: ## Take The Values Which Include Values For 'Text' Column
             x,y,w,h = int(b[6]), int(b[7]), int(b[8]), int(b[9])
             cv2.rectangle(img, (x,y), (x+w,y+h), (100,144,0), 2)
-            cv2.putText(img, b[11], (x,y), cv2.FONT_HERSHEY_COMPLEX, 0.5, (100,100,0), 1)
+            cv2.putText(img, b[11], (x,y), 2, 0.8, (100,100,0), 1)
             
 cv2.imshow("Image", img)
 cv2.waitKey(0)
