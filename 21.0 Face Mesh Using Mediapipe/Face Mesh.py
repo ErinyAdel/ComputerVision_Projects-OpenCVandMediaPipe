@@ -19,7 +19,6 @@ rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 result = face_mesh_mp.process(rgb)
 num_of_face  = 0
 for facial_landmarks in result.multi_face_landmarks:
-    print('MMM')
     for i in range(0, 468):
         pt1 = facial_landmarks.landmark[i]
         #print(pt1)
